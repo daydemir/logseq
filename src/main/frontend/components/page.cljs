@@ -326,6 +326,12 @@
        (when-not block?
          (tagged-pages repo page-name))
 
+       ;; typed blocks
+       [:div {:key "page-references"}
+        (rum/with-key
+          (reference/typed-references route-page-name false)
+          (str route-page-name "-refs"))]
+
        ;; referenced blocks
        [:div {:key "page-references"}
         (rum/with-key
