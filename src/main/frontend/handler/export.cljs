@@ -472,15 +472,7 @@
                                               (fn [content] (property/remove-properties (:block/format b) content)))
                                       b)) blocks)
                      children (outliner-tree/blocks->vec-tree blocks' name)]
-                 (assoc page :block/children children))))
-        (nested-select-keys
-         [:block/id
-          :block/page-name
-          :block/properties
-          :block/heading-level
-          :block/format
-          :block/children
-          :block/content]))})
+                 (assoc page :block/children children)))))})
 
 (defn- file-name [repo extension]
   (-> (string/replace repo config/local-db-prefix "")
